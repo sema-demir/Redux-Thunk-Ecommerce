@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const setLoading = () => {
   return {
     type: "SET_LOADING",
@@ -15,5 +17,17 @@ export const setError = (payload) => {
   return {
     type: "SET_ERROR",
     payload,
+  };
+};
+
+//!redux-thunk devreye girince
+//aksiyon olusturan fonksiyonlar
+export const getData = () => {
+  return (dispatch) => {
+    dispatch(setLoading());
+    axios
+      .get("http://localhost:3040/products")
+      .then((res) => dispatch(setProducts(res.data)))
+      .catch((err) => dispatch(setError(err.message)));
   };
 };

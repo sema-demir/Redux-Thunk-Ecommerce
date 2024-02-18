@@ -1,16 +1,19 @@
-import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../Components/Loader";
+import { getData } from "../Redux/Actions/productActions";
+import Card from "../Components/Card";
 
-const MainPage = () => {
+const HomePage = () => {
   const store = useSelector((store) => store.products);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    axios.get("http://localhost:3040/products");
+    dispatch(getData());
   }, []);
+
   return (
-    <div className="container p-5">
+    <div className="container">
       {/* veriler yükleniyorsa */}
       {store.isLoading && <Loader />}
 
@@ -18,11 +21,13 @@ const MainPage = () => {
       {store.isError && <h1 className="text-center my-5">{store.isError}</h1>}
 
       {/* veriler geldiyse */}
-      {store?.products.map((item) => (
-        <h3>{item.title}</h3>
-      ))}
+      <div className="d-flex flex-wrap gap-5 justify-content-center my-5">
+        {store?.products.map((product) => (
+          <Card key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };
 
-export default MainPage;
+export default HomePage;

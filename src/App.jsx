@@ -1,11 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MainPage from "./pages/MainPage";
+import HomePage from "./pages/homePage";
+import Header from "./Components/Header";
+import BasketPage from "./pages/BasketPage";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/sepet" element={<BasketPage />} />
       </Routes>
     </BrowserRouter>
   );
