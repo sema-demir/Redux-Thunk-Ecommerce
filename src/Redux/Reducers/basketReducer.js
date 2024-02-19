@@ -24,6 +24,28 @@ const basketReducer = (state = initialState, action) => {
         isError: false,
         basket: action.payload,
       };
+    case "UPDATE":
+      //1.GÜNCELELNECEK DİZİNNİ KOPYASINI OLUSTURMAK
+      const cloneBasket = [...state.basket];
+
+      //2. güncellenecek elemmanın dizideki sırasını bul
+      const foundId = cloneBasket.findIndex(
+        (item) => item.id === action.payload
+      );
+      //3. sepetteki ürünün miktarını arttır
+      cloneBasket[foundId].amount++;
+      console.log(cloneBasket);
+      //) alternatif splice çözümü
+      // cloneBasket.splice(founId, 1, {
+      //   ...cloneBasket[founId],
+      //    amount: cloneBasket[founId].amount + 1,
+      //  });
+
+      return { ...state, basket: cloneBasket };
+
+    case "DELETE":
+      const filtred = state.basket.filter((item) => item.id !== action.payload);
+      return { ...state, basket: filtred };
 
     default:
       return state;

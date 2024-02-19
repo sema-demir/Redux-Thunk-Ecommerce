@@ -188,7 +188,7 @@
       "model": "A1",
       "price": 1500,
       "image": "https://picsum.photos/201",
-      "amount": 1
+      "amount": 2
     },
     {
       "id": "2",
@@ -196,54 +196,30 @@
       "model": "B2",
       "price": 3000,
       "image": "https://picsum.photos/202",
-      "amount": 1
+      "amount": 2
     },
     {
-      "id": "3",
-      "make": "DEF",
-      "model": "C3",
-      "price": 150,
-      "image": "https://picsum.photos/203",
-      "amount": 1
+      "id": "14",
+      "make": "QRS",
+      "model": "G7",
+      "price": 120,
+      "image": "https://picsum.photos/207",
+      "amount": 2
     },
     {
-      "id": "3",
-      "make": "DEF",
-      "model": "C3",
-      "price": 150,
-      "image": "https://picsum.photos/203",
-      "amount": 1
+      "id": "6",
+      "make": "NOP",
+      "model": "F6",
+      "price": 4000,
+      "image": "https://picsum.photos/206",
+      "amount": 2
     },
     {
-      "id": "2",
-      "make": "ABC",
-      "model": "B2",
-      "price": 3000,
-      "image": "https://picsum.photos/202",
-      "amount": 1
-    },
-    {
-      "id": "1",
-      "make": "XYZ",
-      "model": "A1",
-      "price": 1500,
-      "image": "https://picsum.photos/201",
-      "amount": 1
-    },
-    {
-      "id": "2",
-      "make": "ABC",
-      "model": "B2",
-      "price": 3000,
-      "image": "https://picsum.photos/202",
-      "amount": 1
-    },
-    {
-      "id": "3",
-      "make": "DEF",
-      "model": "C3",
-      "price": 150,
-      "image": "https://picsum.photos/203",
+      "id": "5",
+      "make": "KLM",
+      "model": "E5",
+      "price": 2500,
+      "image": "https://picsum.photos/205",
       "amount": 1
     }
   ]

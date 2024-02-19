@@ -1,4 +1,12 @@
+import { useDispatch } from "react-redux";
+import {
+  addToBasket,
+  removeItem,
+  updateItem,
+} from "../Redux/Actions/basketAction";
+
 const BasketItem = ({ product }) => {
+  const dispatch = useDispatch();
   return (
     <div className="rounded-2 p-4 bg-white d-flex justify-content-between text-black mb-5">
       <div className="d-flex align-items-center gap-3">
@@ -13,8 +21,18 @@ const BasketItem = ({ product }) => {
       </div>
       <div className="d-flex align-items-center gap-3">
         <h6>Miktar: {product.amount}</h6>
-        <button className="btn btn-sm btn-primary">+</button>
-        <button className="btn btn-sm btn-danger">-</button>
+        <button
+          onClick={() => dispatch(updateItem(product))}
+          className="btn btn-sm btn-primary"
+        >
+          +
+        </button>
+        <button
+          onClick={() => dispatch(removeItem(product.id))}
+          className="btn btn-sm btn-danger"
+        >
+          -
+        </button>
       </div>
     </div>
   );
